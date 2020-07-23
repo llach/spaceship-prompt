@@ -5,9 +5,9 @@
 # ------------------------------------------------------------------------------
 
 SPACESHIP_ROS_SHOW="${SPACESHIP_ROS_SHOW=true}"
-SPACESHIP_ROS_PREFIX="${SPACESHIP_ROS_PREFIX="$SPACESHIP_PROMPT_DEFAULT_PREFIX"}"
+SPACESHIP_ROS_PREFIX="${SPACESHIP_ROS_PREFIX=""}"
 SPACESHIP_ROS_SUFFIX="${SPACESHIP_ROS_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
-SPACESHIP_ROS_SYMBOL="${SPACESHIP_ROS_SYMBOL="🍷 "}"
+SPACESHIP_ROS_SYMBOL="${SPACESHIP_ROS_SYMBOL="🤖 "}"
 SPACESHIP_ROS_COLOR="${SPACESHIP_ROS_COLOR="white"}"
 
 # ------------------------------------------------------------------------------
@@ -26,7 +26,6 @@ spaceship_ros() {
   # Display ROS section
   spaceship::section \
     "$SPACESHIP_ROS_COLOR" \
-    "$SPACESHIP_ROS_PREFIX" \
     "$SPACESHIP_ROS_SYMBOL$ROS_WS" \
     "$SPACESHIP_ROS_SUFFIX"
 }
