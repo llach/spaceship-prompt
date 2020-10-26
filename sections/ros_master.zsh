@@ -3,11 +3,6 @@
 # ------------------------------------------------------------------------------
 # Configuration
 # ------------------------------------------------------------------------------
-
-SPACESHIP_ROS_SHOW="${SPACESHIP_ROS_SHOW=true}"
-SPACESHIP_ROS_PREFIX="${SPACESHIP_ROS_PREFIX=""}"
-SPACESHIP_ROS_SUFFIX="${SPACESHIP_ROS_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
-SPACESHIP_ROS_SYMBOL="${SPACESHIP_ROS_SYMBOL="🤖 "}"
 SPACESHIP_ROS_COLOR="${SPACESHIP_ROS_COLOR="white"}"
 
 # ------------------------------------------------------------------------------
@@ -23,11 +18,13 @@ spaceship_ros_master() {
   # Show section only if ROS was sourced
   [[ ! -z "$ROS_MASTER_URI" ]] || return
 
-  mas=`echo $ROS_MASTER_URI | sed "s/http:\/\/tiago-//g" | sed "s/:11311//g"`
+  mas=`echo $ROS_MASTER_URI | sed "s/http:\/\///g" | sed "s/tiago-//g" | sed "s/:11311//g"`
+
+  [[ $mas == localhost ]] mas=LOC
 
   # Display ROS section
   spaceship::section \
     "$SPACESHIP_ROS_COLOR" \
-    " $mas " \
+    "|$mas" \
     "$SPACESHIP_ROS_SUFFIX"
 }

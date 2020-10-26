@@ -27,5 +27,5 @@ spaceship_ros() {
   spaceship::section \
     "$SPACESHIP_ROS_COLOR" \
     "$SPACESHIP_ROS_SYMBOL$ROS_WS" \
-    "$SPACESHIP_ROS_SUFFIX"
+    ""
 }
